@@ -21,7 +21,7 @@ export const envValidationSchema = Joi.object({
   DB_PORT: hostPortSchema,
   DB_USER: trimmedStringSchema.min(1).max(32),
   DB_PASSWORD: stringSchema.min(1).max(255),
-  DB_COMMON_SCHEMA: trimmedStringSchema.min(1).max(64),
+  DB_SCHEMA: trimmedStringSchema.min(1).max(64),
 
   BCRYPT_PASSWORD_ROUNDS: integerSchema.min(10).max(14),
   BCRYPT_REFRESH_TOKEN_ROUNDS: integerSchema.min(10).max(14),

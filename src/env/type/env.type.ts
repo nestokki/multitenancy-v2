@@ -8,7 +8,7 @@ export type DatabaseEnv = {
   PORT: number;
   USER: string;
   PASSWORD: string;
-  COMMON_SCHEMA: string;
+  SCHEMA: string;
 };
 
 export type BcryptEnv = {

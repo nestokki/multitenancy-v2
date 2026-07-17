@@ -16,7 +16,7 @@ export const databaseConfig = registerAs(Symbol('DATABASE_CONFIG_TOKEN'), (): Da
   PORT: getRequiredEnvNumber('DB_PORT'),
   USER: getRequiredTrimmedEnvString('DB_USER'),
   PASSWORD: getRequiredEnvString('DB_PASSWORD'),
-  COMMON_SCHEMA: getRequiredTrimmedEnvString('DB_COMMON_SCHEMA'),
+  SCHEMA: getRequiredTrimmedEnvString('DB_SCHEMA'),
 }));
 
 export const bcryptConfig = registerAs(Symbol('BCRYPT_CONFIG_TOKEN'), (): BcryptEnv => ({
