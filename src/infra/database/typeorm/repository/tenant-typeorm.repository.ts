@@ -1,5 +1,5 @@
 import type { EntityTarget, ObjectLiteral, Repository } from 'typeorm';
-import { TenantEntityManagerContext } from '../context/tenant-entity-manager.context';
+import { TenantEntityManagerContext } from '../../context/tenant-entity-manager.context';
 
 export abstract class TenantTypeormRepository<TEntity extends ObjectLiteral> {
   protected constructor(

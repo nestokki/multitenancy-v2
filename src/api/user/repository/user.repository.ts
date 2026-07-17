@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Nullable } from 'src/common/type/native';
 import { TenantEntityManagerContext } from 'src/infra/database/context/tenant-entity-manager.context';
-import { TenantTypeormRepository } from 'src/infra/database/repository/tenant-typeorm.repository';
+import { TenantTypeormRepository } from 'src/infra/database/typeorm/repository/tenant-typeorm.repository';
 import { UserEntity } from '../entity/user.entity';
 
 @Injectable()
