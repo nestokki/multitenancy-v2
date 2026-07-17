@@ -5,6 +5,7 @@ const validateHostDomain = Joi.alternatives()
     Joi.string().valid('localhost'), // 로컬
     Joi.string().ip({ version: ['ipv4', 'ipv6'] }), // IP
     Joi.string().hostname(), // 도메인
+    Joi.string().uri(), // URL
   )
   .required();
 const hostPortSchema = Joi.number().integer().min(1).max(65535).required();
@@ -13,7 +14,7 @@ const stringSchema = Joi.string().pattern(/\S/).required();
 const integerSchema = Joi.number().integer().required();
 
 export const envValidationSchema = Joi.object({
-  SERVER_HOST: validateHostDomain,
+  SERVER_BASE_URL: validateHostDomain,
   SERVER_PORT: hostPortSchema,
 
   DB_HOST: validateHostDomain,

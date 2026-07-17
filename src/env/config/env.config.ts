@@ -1,14 +1,14 @@
 import { registerAs } from '@nestjs/config';
-import type { ServerEnv, DatabaseEnv, BcryptEnv, JwtEnv } from '../type/env.type';
+import type { AppEnv, DatabaseEnv, BcryptEnv, JwtEnv } from '../type/env.type';
 import {
   getRequiredEnvNumber,
   getRequiredEnvString,
   getRequiredTrimmedEnvString,
 } from './env.parser';
 
-export const serverConfig = registerAs(Symbol('SERVER_CONFIG_TOKEN'), (): ServerEnv => ({
-  HOST: getRequiredEnvString('SERVER_HOST'),
-  PORT: getRequiredEnvNumber('SERVER_PORT'),
+export const appConfig = registerAs(Symbol('APP_CONFIG_TOKEN'), (): AppEnv => ({
+  SERVER_BASE_URL: getRequiredEnvString('SERVER_BASE_URL'),
+  SERVER_PORT: getRequiredEnvNumber('SERVER_PORT'),
 }));
 
 export const databaseConfig = registerAs(Symbol('DATABASE_CONFIG_TOKEN'), (): DatabaseEnv => ({
@@ -35,4 +35,4 @@ export const jwtConfig = registerAs(Symbol('JWT_CONFIG_TOKEN'), (): JwtEnv => ({
   },
 }));
 
-export const envConfigs = [serverConfig, databaseConfig, bcryptConfig, jwtConfig];
+export const envConfigs = [appConfig, databaseConfig, bcryptConfig, jwtConfig];

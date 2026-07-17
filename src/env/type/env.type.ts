@@ -1,6 +1,6 @@
-export type ServerEnv = {
-  HOST: string;
-  PORT: number;
+export type AppEnv = {
+  SERVER_BASE_URL: string;
+  SERVER_PORT: number;
 };
 
 export type DatabaseEnv = {

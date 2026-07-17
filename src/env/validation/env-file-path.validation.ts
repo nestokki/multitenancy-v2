@@ -1,7 +1,7 @@
 import Joi from 'joi';
 import type { Optional } from 'src/common/type/native';
 
-const nodeEnvs = ['development', 'test', 'production'] as const;
+const nodeEnvs = ['development', 'production'] as const;
 
 type NodeEnv = (typeof nodeEnvs)[number];
 
