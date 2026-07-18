@@ -1,4 +1,7 @@
+import type { NodeEnv } from '../enum/node-env.enum';
+
 export type AppEnv = {
+  NODE_ENV: NodeEnv;
   SERVER_BASE_URL: string;
   SERVER_PORT: number;
 };

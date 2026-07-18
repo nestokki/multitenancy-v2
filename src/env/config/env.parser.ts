@@ -1,3 +1,21 @@
+import { NodeEnv } from '../enum/node-env.enum';
+
+function isNodeEnv(value: string): value is NodeEnv {
+  const nodeEnvValues: readonly string[] = Object.values(NodeEnv);
+
+  return nodeEnvValues.includes(value);
+}
+
+export function getRequiredNodeEnv(key: string): NodeEnv {
+  const value = getRequiredEnvString(key);
+
+  if (!isNodeEnv(value)) {
+    throw new Error(`[ENV] ${key} 형식이 올바르지 않습니다.`);
+  }
+
+  return value;
+}
+
 export function getRequiredEnvString(key: string): string {
   const value = process.env[key];
 

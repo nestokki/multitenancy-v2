@@ -3,10 +3,12 @@ import type { AppEnv, DatabaseEnv, BcryptEnv, JwtEnv } from '../type/env.type';
 import {
   getRequiredEnvNumber,
   getRequiredEnvString,
+  getRequiredNodeEnv,
   getRequiredTrimmedEnvString,
 } from './env.parser';
 
 export const appConfig = registerAs(Symbol('APP_CONFIG_TOKEN'), (): AppEnv => ({
+  NODE_ENV: getRequiredNodeEnv('NODE_ENV'),
   SERVER_BASE_URL: getRequiredEnvString('SERVER_BASE_URL'),
   SERVER_PORT: getRequiredEnvNumber('SERVER_PORT'),
 }));
