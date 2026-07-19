@@ -25,11 +25,13 @@ const typeormDataSource = new DataSource({
   username: getRequiredTrimmedEnvString('DB_USER'),
   password: getRequiredEnvString('DB_PASSWORD'),
   database: getRequiredTrimmedEnvString('DB_SCHEMA'),
-
-  entities: [join(sourceRoot, '**/*.entity.{ts,js}')],
-
+  charset: 'utf8mb4',
+  timezone: getRequiredTrimmedEnvString('DB_TIMEZONE'),
+  entities: [join(sourceRoot, 'api/**/*.entity.{ts,js}')],
   synchronize: false,
-  migrations: [join(sourceRoot, '**/migration/**/*.{ts,js}')],
+  connectTimeout: getRequiredEnvNumber('DB_CONNECT_TIMEOUT_MS'),
+  logging: ['schema', 'migration', 'error', 'warn'],
+  migrations: [join(sourceRoot, 'infra/database/typeorm/migration/**/*.{ts,js}')],
   migrationsTableName: 'migrations',
 });
 
