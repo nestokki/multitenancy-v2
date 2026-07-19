@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './user/user.module';
+import { PlatformModule } from './platform/platform.module';
 
 @Module({
-  imports: [UserModule],
+  imports: [PlatformModule],
 })
 export class ApiModule {}
