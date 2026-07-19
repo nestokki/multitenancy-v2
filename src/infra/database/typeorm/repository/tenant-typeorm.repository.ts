@@ -7,7 +7,7 @@ import type {
 } from 'typeorm';
 import { TenantEntityManagerContext } from '../../context/tenant-entity-manager.context';
 
-export interface TenantScopedEntity extends ObjectLiteral {
+interface TenantScopedEntity extends ObjectLiteral {
   platformId: string;
 }
 
