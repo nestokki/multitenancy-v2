@@ -12,6 +12,15 @@ export type DatabaseEnv = {
   USER: string;
   PASSWORD: string;
   SCHEMA: string;
+  TIMEZONE: string;
+  POOL_SIZE: number;
+  POOL_MAX_IDLE: number;
+  POOL_IDLE_TIMEOUT_MS: number;
+  POOL_QUEUE_LIMIT: number;
+  CONNECT_TIMEOUT_MS: number;
+  RETRY_ATTEMPTS: number;
+  RETRY_DELAY_MS: number;
+  SLOW_QUERY_THRESHOLD_MS: number;
 };
 
 export type BcryptEnv = {

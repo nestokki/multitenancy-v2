@@ -19,6 +19,15 @@ export const databaseConfig = registerAs(Symbol('DATABASE_CONFIG_TOKEN'), (): Da
   USER: getRequiredTrimmedEnvString('DB_USER'),
   PASSWORD: getRequiredEnvString('DB_PASSWORD'),
   SCHEMA: getRequiredTrimmedEnvString('DB_SCHEMA'),
+  TIMEZONE: getRequiredTrimmedEnvString('DB_TIMEZONE'),
+  POOL_SIZE: getRequiredEnvNumber('DB_POOL_SIZE'),
+  POOL_MAX_IDLE: getRequiredEnvNumber('DB_POOL_MAX_IDLE'),
+  POOL_IDLE_TIMEOUT_MS: getRequiredEnvNumber('DB_POOL_IDLE_TIMEOUT_MS'),
+  POOL_QUEUE_LIMIT: getRequiredEnvNumber('DB_POOL_QUEUE_LIMIT'),
+  CONNECT_TIMEOUT_MS: getRequiredEnvNumber('DB_CONNECT_TIMEOUT_MS'),
+  RETRY_ATTEMPTS: getRequiredEnvNumber('DB_RETRY_ATTEMPTS'),
+  RETRY_DELAY_MS: getRequiredEnvNumber('DB_RETRY_DELAY_MS'),
+  SLOW_QUERY_THRESHOLD_MS: getRequiredEnvNumber('DB_SLOW_QUERY_THRESHOLD_MS'),
 }));
 
 export const bcryptConfig = registerAs(Symbol('BCRYPT_CONFIG_TOKEN'), (): BcryptEnv => ({
