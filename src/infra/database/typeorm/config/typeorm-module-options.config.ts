@@ -9,7 +9,7 @@ import { EnvService } from 'src/env/service/env.service';
 const sourceRoot = join(__dirname, '../../../..');
 
 const loggingByNodeEnv: Record<NodeEnv, LogLevel[]> = {
-  [NodeEnv.TEST]: ['error'],
+  [NodeEnv.LOCAL]: ['error'],
   [NodeEnv.DEV]: ['query', 'schema', 'error', 'warn', 'migration'],
   [NodeEnv.PROD]: ['error', 'warn', 'migration'],
 };
